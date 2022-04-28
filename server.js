@@ -1,11 +1,11 @@
-const express = require("express");
+const express = require('express');
 const app = express();
 
 // update this with your mongo connection string from running mongod
-process.env.MONGOCONNECT = "your mongo connectionstring here!";
+process.env.MONGOCONNECT = 'mongodb://127.0.0.1:27017';
 
-const connectDB = require("./config/db");
-const storePlant = require("./src/storePlant");
+const connectDB = require('./config/db');
+const storePlant = require('./src/storePlant');
 
 // Connect database
 // connectDB();
@@ -13,10 +13,10 @@ const storePlant = require("./src/storePlant");
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => res.send("API Running"));
+app.get('/', (req, res) => res.send('API Running'));
 
 // Define Routes
-app.post("/plants", async (req, res) => {
+app.post('/plants', async (req, res) => {
   // get plantName from request body
   const plantName = req.body.name;
   const desiredDatasource = req.body.datasource;
