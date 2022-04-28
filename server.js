@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 // update this with your mongo connection string from running mongod
-process.env.MONGOCONNECT = 'mongodb://127.0.0.1:27017';
+process.env.MONGOCONNECT = 'mongodb://127.0.0.1:27017/bucksPlants';
 
 const connectDB = require('./config/db');
 const storePlant = require('./src/storePlant');
